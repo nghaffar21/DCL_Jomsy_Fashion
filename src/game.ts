@@ -1,3 +1,8 @@
+import { createNPC } from "./GameObjects/NPC"
+import * as utils from '@dcl/ecs-scene-utils'
+import { NPC } from '@dcl/npc-scene-utils'
+import { Dialog } from '@dcl/npc-scene-utils'
+import { movePlayerTo } from '@decentraland/RestrictedActions'
 
 const _scene = new Entity('_scene')
 engine.addEntity(_scene)
@@ -28,7 +33,7 @@ engine.addEntity(jomsyfashion)
 jomsyfashion.setParent(_scene)
 const transform3 = new Transform({
   position: new Vector3(8, 0, 8),
-  rotation: new Quaternion(0, 0, 0, 1),
+  rotation: Quaternion.Euler(0, 180, 0),
   scale: new Vector3(1, 1, 1)
 })
 jomsyfashion.addComponentOrReplace(transform3)
@@ -41,7 +46,7 @@ jomsyfashion.addComponentOrReplace(gltfShape2)
 // ---------------------- DCL token ------------------------
 
 const dclToken = new Entity()
-engine.addEntity(dclToken)
+//engine.addEntity(dclToken)
 
 dclToken.addComponent(new CylinderShape())
 
@@ -91,7 +96,7 @@ jomsyFashionLink1.addComponent(
 // ---------------------- Jomsy Fashion link 2; on Coming Soon logo ------------------------
 
 const jomsyFashionLink2 = new Entity()
-engine.addEntity(jomsyFashionLink2)
+//engine.addEntity(jomsyFashionLink2)
 
 jomsyFashionLink2.addComponent(new BoxShape())
 
@@ -114,7 +119,7 @@ jomsyFashionLink2.addComponent(
 // ---------------------- Jomsy Fashion link 3; on Silvie's photo ------------------------
 
 const jomsyFashionLink3 = new Entity()
-engine.addEntity(jomsyFashionLink3)
+//engine.addEntity(jomsyFashionLink3)
 
 jomsyFashionLink3.addComponent(new BoxShape())
 
@@ -133,3 +138,6 @@ jomsyFashionLink3.addComponent(
     openExternalURL("https://jomsy.com/")
   })
 )
+
+// ---------------------- The NPC ----------------------
+createNPC(_scene);
