@@ -37,7 +37,7 @@ const transform3 = new Transform({
   scale: new Vector3(1, 1, 1)
 })
 jomsyfashion.addComponentOrReplace(transform3)
-const gltfShape2 = new GLTFShape("c72d363c-f6c2-4735-bd4f-fad1d5224004/jomsyfashion_001.gltf")
+const gltfShape2 = new GLTFShape("src/resources/jomsyfashion_building_009.glb")
 gltfShape2.withCollisions = true
 gltfShape2.isPointerBlocker = true
 gltfShape2.visible = true
