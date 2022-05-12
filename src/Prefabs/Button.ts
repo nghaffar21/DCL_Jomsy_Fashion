@@ -5,7 +5,7 @@ export class Button extends Entity {
   transform0;
   //myEntity: Entity;
   //myMaterial: Material;
-  constructor(book, direction, index, position0 = new Vector3(0, 0, 0)) {
+  constructor(book, index, position0 = new Vector3(0, 0, 0)) {
     super();
     let myEntity = this; //what happens if we just work with "this" instead of myEntity?
     myEntity.addComponent(new ConeShape());
@@ -22,12 +22,7 @@ export class Button extends Entity {
 
       new OnPointerDown((e) => {
 
-        if(direction === "right") //?
-          book.goToNextPage();
-        else if(direction === "left")
-          book.goToPreviousPage();
-        else
-          null; // Replace this with an error message
+       book.goToNextPage();
 
       })
     )

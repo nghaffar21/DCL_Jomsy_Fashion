@@ -1,4 +1,5 @@
 import { createNPC } from "./GameObjects/NPC"
+import { createBook } from "./GameObjects/Book"
 import * as utils from '@dcl/ecs-scene-utils'
 import { NPC } from '@dcl/npc-scene-utils'
 import { Dialog } from '@dcl/npc-scene-utils'
@@ -141,3 +142,6 @@ jomsyFashionLink3.addComponent(
 
 // ---------------------- The NPC ----------------------
 createNPC(_scene);
+
+// ---------------------- The Elevator ----------------------
+let book = new createBook(jomsyfashion);
