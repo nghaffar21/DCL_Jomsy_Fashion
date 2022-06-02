@@ -15,20 +15,20 @@ const transform = new Transform({
 })
 _scene.addComponentOrReplace(transform)
 
-const entity = new Entity('entity')
-engine.addEntity(entity)
-entity.setParent(_scene)
-const gltfShape = new GLTFShape("c9b17021-765c-4d9a-9966-ce93a9c323d1/FloorBaseGrass_01/FloorBaseGrass_01.glb")
-gltfShape.withCollisions = true
-gltfShape.isPointerBlocker = true
-gltfShape.visible = true
-entity.addComponentOrReplace(gltfShape)
-const transform2 = new Transform({
-  position: new Vector3(8, 0, 8),
-  rotation: new Quaternion(0, 0, 0, 1),
-  scale: new Vector3(1, 1, 1)
-})
-entity.addComponentOrReplace(transform2)
+// const entity = new Entity('entity')
+// engine.addEntity(entity)
+// entity.setParent(_scene)
+// const gltfShape = new GLTFShape("c9b17021-765c-4d9a-9966-ce93a9c323d1/FloorBaseGrass_01/FloorBaseGrass_01.glb")
+// gltfShape.withCollisions = true
+// gltfShape.isPointerBlocker = true
+// gltfShape.visible = false
+// entity.addComponentOrReplace(gltfShape)
+// const transform2 = new Transform({
+//   position: new Vector3(8, 0, 8),
+//   rotation: new Quaternion(0, 0, 0, 1),
+//   scale: new Vector3(1, 1, 1)
+// })
+// entity.addComponentOrReplace(transform2)
 
 const jomsyfashion = new Entity('jomsyfashion')
 engine.addEntity(jomsyfashion)
@@ -42,8 +42,19 @@ jomsyfashion.addComponentOrReplace(transform3)
 const gltfShape2 = new GLTFShape("src/resources/jomsyfashion_building_009.glb")
 gltfShape2.withCollisions = true
 gltfShape2.isPointerBlocker = true
-gltfShape2.visible = true
 jomsyfashion.addComponentOrReplace(gltfShape2)
+
+gltfShape2.visible = true
+
+// jomsyfashion.addComponent(
+//   new utils.Delay(3000, () => {
+//    // gltfShape2.visible = true;
+//   })
+// )
+
+
+
+
 
 // ---------------------- DCL token ------------------------
 
@@ -71,6 +82,7 @@ dclToken.addComponent(
     openExternalURL("https://www.digitalandarchitects.com/")
   })
 )
+
 
 // ---------------------- Jomsy Fashion link 1; on Jomsy fashion logo ------------------------
 
@@ -141,11 +153,42 @@ jomsyFashionLink3.addComponent(
   })
 )
 
+
+
+
 // ---------------------- The NPC ----------------------
-createNPC(_scene);
 
 // ---------------------- The Elevator ----------------------
 let book = new createBook(jomsyfashion);
 
 // ---------------------- The Screen ----------------------
 let screen = new createVideo(jomsyfashion);
+
+
+createNPC(_scene);
+
+
+
+const jomsyFashionLink4 = new Entity()
+engine.addEntity(jomsyFashionLink4)
+
+jomsyFashionLink4.addComponent(new BoxShape())
+
+const jomsyFashionLink3Transform4 = new Transform({
+  position: new Vector3(4.5, 9, 1),
+  scale: new Vector3(1, 1, 1),
+})
+jomsyFashionLink4.addComponent(jomsyFashionLink3Transform4)
+
+jomsyFashionLink4.getComponent(BoxShape).visible = true
+jomsyFashionLink4.addComponent(buttonMaterial)
+
+jomsyFashionLink4.addComponent(
+  new OnPointerDown(() => {
+    openExternalURL("https://google.com/")
+  },
+    {
+      hoverText: "Open Google URL"
+    }
+  ))
+

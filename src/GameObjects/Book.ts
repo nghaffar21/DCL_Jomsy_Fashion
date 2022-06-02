@@ -1,4 +1,5 @@
 import * as utils from '@dcl/ecs-scene-utils'
+import { ShowHideObjects } from './HideShow';
 
 export function createBook(building: Entity, position0 = new Vector3(1.1,8.7,6.5)) {
 
@@ -61,5 +62,13 @@ export function createBook(building: Entity, position0 = new Vector3(1.1,8.7,6.5
 
     clip.play();
   }
+
+  const triggerPosition = new Vector3(1.5, 1.5, 8);
+  const triggerSize = new Vector3(15,7, 19);
+  ShowHideObjects(entity,triggerPosition,triggerSize);
+
+
+
+
 
 }
