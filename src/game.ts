@@ -47,7 +47,7 @@ jomsyfashion.addComponentOrReplace(gltfShape2)
 gltfShape2.visible = true
 
 // jomsyfashion.addComponent(
-//   new utils.Delay(3000, () => {
+//   new utils.Delay(1000, () => {
 //    // gltfShape2.visible = true;
 //   })
 // )

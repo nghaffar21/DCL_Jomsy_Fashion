@@ -1,4 +1,6 @@
 import * as utils from '@dcl/ecs-scene-utils'
+import { Video } from './HideShow';
+
 export function createVideo(building, video="src/resources/video.mp4", position0= new Vector3(7, 10.6, -2.3), rotation0=Quaternion.Euler(0,-90,0), bottom=true, flip=false) {
 
   const myVideoClip = new VideoClip(video)
@@ -23,12 +25,25 @@ export function createVideo(building, video="src/resources/video.mp4", position0
    )
    screen.addComponent(myMaterial)
    screen.setParent( building)
+
+   Video(screen,myVideoTexture);
+
+
+
+
+
+
+
+
+
+
+   
    //let triggerBox = new utils.TriggerBoxShape(new Vector3(10,2,1),new Vector3(1, 1, 1))
 
 //create trigger for entity
 
 
-//add entity to engine
+// add entity to engine
 // screen.addComponent(
 //  new utils.TriggerComponent(
 //    triggerBox, //shape
@@ -36,7 +51,7 @@ export function createVideo(building, video="src/resources/video.mp4", position0
 //      onCameraEnter : () => {
 //        myVideoTexture.play();
 //      },
-//
+
 //      onCameraExit : () => {
 //        myVideoTexture.pause();
 //      },
@@ -44,6 +59,6 @@ export function createVideo(building, video="src/resources/video.mp4", position0
 //    }
 //  )
 // )
-   //myVideoTexture.play()
+//    myVideoTexture.play()
 
 }
