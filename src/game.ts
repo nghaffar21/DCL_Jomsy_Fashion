@@ -59,14 +59,14 @@ gltfShape2.visible = true
 // ---------------------- DCL token ------------------------
 
 const dclToken = new Entity()
-//engine.addEntity(dclToken)
+engine.addEntity(dclToken)
 
 dclToken.addComponent(new CylinderShape())
 
 const dclTokenTransform = new Transform({
-  position: new Vector3(8, 0.5, 8),
+  position: new Vector3(14.25, 0.5, 14.5),
   rotation: new Quaternion(0, 0, 0, 1),
-  scale: new Vector3(1, 0.5, 1)
+  scale: new Vector3(0.8, 0.5, 0.8)
 })
 dclToken.addComponent(dclTokenTransform)
 
@@ -92,7 +92,7 @@ engine.addEntity(jomsyFashionLink1)
 jomsyFashionLink1.addComponent(new BoxShape())
 
 const jomsyFashionLink1Transform = new Transform({
-  position: new Vector3(5.25, 3, 4.7),
+  position: new Vector3(10.65, 3.2, 11.5),
   rotation: new Quaternion(0, 0, 0, 1),
   scale: new Vector3(2, 2, 0.5)
 })
@@ -185,10 +185,9 @@ jomsyFashionLink4.addComponent(buttonMaterial)
 
 jomsyFashionLink4.addComponent(
   new OnPointerDown(() => {
-    openExternalURL("https://google.com/")
+    openExternalURL("https://www.amazon.com/Entire-Fashion-Entrepreneurship-Course-Successful-ebook/dp/B07CPH8GDM")
   },
     {
-      hoverText: "Open Google URL"
+      hoverText: "Buy the Book here!"
     }
   ))
-

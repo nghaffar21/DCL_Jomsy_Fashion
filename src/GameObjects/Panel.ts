@@ -6,7 +6,7 @@ export function createVideo(building, video="src/resources/video.mp4", position0
   const myVideoClip = new VideoClip(video)
 
    const myVideoTexture = new VideoTexture(myVideoClip)
- myVideoTexture.loop=false;
+ myVideoTexture.loop=true;
 
    const myMaterial = new Material()
    myMaterial.albedoTexture = myVideoTexture
@@ -37,7 +37,7 @@ export function createVideo(building, video="src/resources/video.mp4", position0
 
 
 
-   
+
    //let triggerBox = new utils.TriggerBoxShape(new Vector3(10,2,1),new Vector3(1, 1, 1))
 
 //create trigger for entity
