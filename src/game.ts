@@ -5,6 +5,7 @@ import * as utils from '@dcl/ecs-scene-utils'
 import { NPC } from '@dcl/npc-scene-utils'
 import { Dialog } from '@dcl/npc-scene-utils'
 import { movePlayerTo } from '@decentraland/RestrictedActions'
+import { hud } from 'dcl-builder-hud'
 
 const _scene = new Entity('_scene')
 engine.addEntity(_scene)
@@ -52,10 +53,6 @@ gltfShape2.visible = true
 //   })
 // )
 
-
-
-
-
 // ---------------------- DCL token ------------------------
 
 const dclToken = new Entity()
@@ -82,7 +79,6 @@ dclToken.addComponent(
     openExternalURL("https://www.digitalandarchitects.com/")
   })
 )
-
 
 // ---------------------- Jomsy Fashion link 1; on Jomsy fashion logo ------------------------
 
@@ -191,3 +187,33 @@ jomsyFashionLink4.addComponent(
       hoverText: "Buy the Book here!"
     }
   ))
+
+// ---------------------- The furniture on the rooftop ----------------------
+
+// furniture set 1
+const furniture = new Entity()
+engine.addEntity(furniture)
+
+const furnitureTransform = new Transform({
+  position: new Vector3(5.6, 7, 7),
+  rotation: Quaternion.Euler(0,0,0),
+  scale: new Vector3(0.8,0.5,0.8)
+})
+furniture.addComponent(furnitureTransform)
+
+furniture.addComponent(new GLTFShape("src/resources/Roof_living.glb"));
+hud.attachToEntity(furniture);
+
+// furniture set 2
+const furniture2 = new Entity()
+engine.addEntity(furniture2)
+
+const furnitureTransform2 = new Transform({
+  position: new Vector3(7.1,7,7),
+  rotation: Quaternion.Euler(0,180,0),
+  scale: new Vector3(0.8, 0.5, 0.8)
+})
+furniture2.addComponent(furnitureTransform2)
+
+furniture2.addComponent(new GLTFShape("src/resources/Roof_living.glb"));
+hud.attachToEntity(furniture2);

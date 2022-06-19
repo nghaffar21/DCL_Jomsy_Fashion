@@ -8,6 +8,9 @@
       ],
       "@dcl/npc-scene-utils": [
         "node_modules\\@dcl\\npc-scene-utils\\dist\\index.d.ts"
+      ],
+      "dcl-builder-hud": [
+        "node_modules\\dcl-builder-hud\\dist\\index.d.ts"
       ]
     },
     "baseUrl": "."
