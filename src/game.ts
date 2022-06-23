@@ -6,6 +6,7 @@ import { NPC } from '@dcl/npc-scene-utils'
 import { Dialog } from '@dcl/npc-scene-utils'
 import { movePlayerTo } from '@decentraland/RestrictedActions'
 import { hud } from 'dcl-builder-hud'
+import { createNFT } from './GameObjects/NFTs'
 
 const _scene = new Entity('_scene')
 engine.addEntity(_scene)
@@ -202,7 +203,7 @@ const furnitureTransform = new Transform({
 furniture.addComponent(furnitureTransform)
 
 furniture.addComponent(new GLTFShape("src/resources/Roof_living.glb"));
-hud.attachToEntity(furniture);
+//hud.attachToEntity(furniture);
 
 // furniture set 2
 const furniture2 = new Entity()
@@ -216,4 +217,13 @@ const furnitureTransform2 = new Transform({
 furniture2.addComponent(furnitureTransform2)
 
 furniture2.addComponent(new GLTFShape("src/resources/Roof_living.glb"));
-hud.attachToEntity(furniture2);
+//hud.attachToEntity(furniture2);
+
+// ---------------------- The NFTs ----------------------
+// The two NFTs on the right wall(if you are standing at the entrace, facing the robot)
+createNFT(jomsyfashion, "ethereum://0x06012c8cf97BEaD5deAe237070F9587f8E7A266d/558536", new Vector3(2.4,2.8,6.3), Quaternion.Euler(360,270,360));
+createNFT(jomsyfashion, "ethereum://0x06012c8cf97BEaD5deAe237070F9587f8E7A266d/558536", new Vector3(2.4,2.8,11.6), Quaternion.Euler(360,270,360));
+
+// The two NFTs on the walls of the entrance
+createNFT(jomsyfashion, "ethereum://0x06012c8cf97BEaD5deAe237070F9587f8E7A266d/558536", new Vector3(4.8,2.8,2.6), Quaternion.Euler(360,180,0));
+createNFT(jomsyfashion, "ethereum://0x06012c8cf97BEaD5deAe237070F9587f8E7A266d/558536", new Vector3(11.1,2.8,2.6), Quaternion.Euler(360,180,0));
