@@ -182,7 +182,7 @@ jomsyFashionLink4.addComponent(buttonMaterial)
 
 jomsyFashionLink4.addComponent(
   new OnPointerDown(() => {
-    openExternalURL("ebook.fashiondesignentrepreneurshipcourse.com")
+    openExternalURL("https://ebook.fashiondesignentrepreneurshipcourse.com")
   },
     {
       hoverText: "Buy the Book here!"
