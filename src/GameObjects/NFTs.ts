@@ -17,6 +17,15 @@ export function createNFT(building, link, position0, rotation0) {
     })
   )
   engine.addEntity(nft)
+
+  nft.addComponent(
+  new OnPointerDown((e) => {
+    openNFTDialog(
+      link,
+      "Jomsy Fashion NFT"
+    )
+  })
+)
   hud.attachToEntity(nft);
 
 }
