@@ -54,7 +54,7 @@ let Greeting: Dialog[] = [
         {
           label: "Visit Jomsy",
           triggeredActions: () => {
-            openExternalURL("https://jomsy.com/")
+            openExternalURL("https://jomsyfashion.com/")
           },
           goToDialog: "main menu"
         },
@@ -115,7 +115,7 @@ let Greeting: Dialog[] = [
     buttons: [
       {label: "Sure!",
         triggeredActions: () => {
-          openExternalURL("https://jomsy.com/")
+          openExternalURL("https://jomsyfashion.com/")
         },
         goToDialog: "main menu"
       },
@@ -134,8 +134,10 @@ let Greeting: Dialog[] = [
     name: "follow me2",
     isQuestion: true,
     buttons: [
-      {label: "Ok!",
-        triggeredActions: () => {},
+      {label: "Teleport Me!",
+        triggeredActions: () => {
+          movePlayerTo({ x: 6, y: 9, z: 4 }, { x: 5, y: 7.9, z: 1 })
+        },
         goToDialog: "main menu"
       }],
     text: 'Jomsy book is finally ready! Go upstairs and check it out!',
