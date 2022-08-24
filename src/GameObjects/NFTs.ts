@@ -2,7 +2,7 @@ import * as utils from '@dcl/ecs-scene-utils'
 import { hud } from 'dcl-builder-hud'
 import { Video } from './HideShow';
 
-export function createNFT(building, link, position0, rotation0) {
+export function createNFT(building, link, position0, rotation0, scale0 = new Vector3(6,6,1)) {
 
   const nft = new Entity()
   const shapeComponent = new NFTShape(
@@ -13,7 +13,7 @@ export function createNFT(building, link, position0, rotation0) {
     new Transform({
       position: position0,
       rotation: rotation0,
-      scale: new Vector3(6,6,1)
+      scale: scale0
     })
   )
   engine.addEntity(nft)
